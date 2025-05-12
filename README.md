@@ -1,54 +1,83 @@
-# React + TypeScript + Vite
+# Cloudairy Text Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern WYSIWYG text editor built with React, TipTap, and Tailwind CSS. Features rich text editing capabilities with a clean and intuitive interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Rich text formatting (Bold, Italic, Underline)
+- Headings (H1, H2, H3)
+- Lists (Ordered and Unordered)
+- Code blocks
+- Blockquotes
+- Image upload and drag-n-drop
+- Text alignment
+- Link management
+- Highlight text
+- Undo/Redo functionality
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (v18 or higher)
+- pnpm (v10 or higher)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd cloudairy_text_editor
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Install dependencies:
+```bash
+pnpm install
 ```
+
+3. Start the development server:
+```bash
+pnpm dev
+```
+
+The application will be available at `http://localhost:5173`
+
+## Build
+
+To create a production build:
+
+```bash
+pnpm build
+```
+
+To preview the production build:
+
+```bash
+pnpm preview
+```
+
+## Tech Stack
+
+- React 19
+- TipTap Editor
+- Tailwind CSS
+- TypeScript
+- Vite
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── editor/
+│   │   ├── Editor.tsx
+│   │   └── editor.css
+│   ├── toolbar/
+│   │   └── ToolBar.tsx
+│   └── ui/
+│       ├── textarea.tsx
+│       └── toggle.tsx
+├── lib/
+│   └── utils.ts
+├── App.tsx
+└── main.tsx
+```
+
